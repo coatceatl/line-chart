@@ -25,6 +25,12 @@ code {
 .card {
   border: none;
 }
+.card-title {
+  margin-left: 18px;
+}
+.apexcharts-canvas {
+  overflow: hidden;
+}
 .apexcharts-tooltip-title {
   background: #33334f !important;
   color: #b8b8d9;
@@ -55,10 +61,8 @@ code {
 }
 .apexcharts-title-text {
   font-size: 1.1em;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  &:last-child {
-    fill: #12c457;
-  }
+}
+.apexcharts-subtitle-text {
+  fill: #12c457;
+  font-size: 1em;
 }

@@ -6,7 +6,9 @@ const options = {
   chart: {
     toolbar: {
       show: false
-    }
+    },
+    // align: "left",
+    // offsetX: -18
   },
   tooltip: {
     fillSeriesColor: true,
@@ -31,7 +33,10 @@ const options = {
     labels: {
       formatter: function (timestamp) {
         return new Date(timestamp).toDateString()
-      }
+      },
+      rotateAlways: true,
+      rotate: -10,
+      trim: true
     },
     type: 'numeric',
     tickAmount: 5,
@@ -41,7 +46,16 @@ const options = {
   },
   title: {
     text: data.metrics[0].current,
+    offsetX: 8
   },
+  subtitle: {
+    text: data.metrics[0].trend.percent,
+    align: "right",
+    offsetY: 1,
+    style: {
+      fontWeight: "bold"
+    }
+  }
 }
 const series = [
   {
