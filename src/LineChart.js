@@ -1,23 +1,22 @@
 import React from "react";
 import Chart from "react-apexcharts";
-import data from './data.json'
+import moment from "moment";
+import data from "./data.json";
 
 const options = {
   chart: {
     toolbar: {
       show: false
     },
-    // align: "left",
-    // offsetX: -18
   },
   tooltip: {
     fillSeriesColor: true,
     theme: "dark",
     y: {
       formatter: function (val) {
-        return val.toLocaleString('en-US', {
-          style: 'currency',
-          currency: 'USD',
+        return val.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
           useGrouping: true,
           maximumFractionDigits: 0,
           minimumFractionDigits: 0
@@ -32,13 +31,14 @@ const options = {
     },
     labels: {
       formatter: function (timestamp) {
-        return new Date(timestamp).toDateString()
+        return moment(timestamp).format("MMM D")
       },
       rotateAlways: true,
-      rotate: -10,
-      trim: true
+      rotate: 360,
+      offsetY: 15,
+      offsetX: 5
     },
-    type: 'numeric',
+    type: "numeric",
     tickAmount: 5,
   },
   yaxis: {
@@ -48,14 +48,15 @@ const options = {
     text: data.metrics[0].current,
     offsetX: 8
   },
-  subtitle: {
-    text: data.metrics[0].trend.percent,
-    align: "right",
-    offsetY: 1,
-    style: {
-      fontWeight: "bold"
-    }
-  }
+  // subtitle: {
+  //   text: data.metrics[0].trend.percent,
+  //   align: "right",
+  //   offsetY: 1,
+  //   offsetX: 3,
+  //   style: {
+  //     fontWeight: "bold"
+  //   }
+  // }
 }
 const series = [
   {
