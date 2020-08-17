@@ -1,4 +1,5 @@
 import React from 'react';
+import { LineChart } from './LineChart';
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
           <div className='card shadow rounded'>
             <div className='card-body'>
               <h5 className='card-title'>Monthly Recurring Revenue</h5>
-              <div className='card-content'></div>
+              <div className='card-content'>
+                <LineChart />
+              </div>
             </div>
           </div>
 
