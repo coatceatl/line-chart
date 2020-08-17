@@ -13,6 +13,52 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .row {
+    width: 100%;
+  }
+}
 .card {
   border: none;
+}
+.apexcharts-tooltip-title {
+  background: #33334f !important;
+  color: #b8b8d9;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 10px !important;
+}
+.apexcharts-tooltip-series-group.apexcharts-active {
+  background: #33334f !important;
+}
+.apexcharts-tooltip-text-label {
+  position: relative;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  color: transparent;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-right: 5px;
+    background-color: #6078ff;
+  }
+}
+.apexcharts-title-text {
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  &:last-child {
+    fill: #12c457;
+  }
 }
